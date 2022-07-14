@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>	
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Dipartimenti</title>
+	</head>
+	<body>
+		<h1>Ecco l'elenco dei Dipartimenti presentio nel database:</h1>
+		<ul>
+			<li th:each="c : ${departmentsList}" th:text="${c.getName()}"></li>
+		</ul>
+	</body>
+</html>
