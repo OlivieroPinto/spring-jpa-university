@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>	
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		 <th:block th:replace="fragment :: head"></th:block>
+	</head>
+	<div><th:block th:replace="fragment :: navbar"></th:block></div>
+	
+<h1>Ecco i dipartiemnti</h1>
+    <div th:if="${#lists.isEmpty(departmentsList)}">
+        <h1>Spiacenti, non è disponibile una lista di dipartimenti</h1>>
+      </div>
+      <div th:unless="${#lists.isEmpty(departmentsList)}">
+
+
+<hr/>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Dipartimento</th>
+					<th>Indirizzo</th>
+					<th>Telefono</th>
+					<th>Email</th>
+					<th>CapoDipartimento</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c : ${departmentsList}">
+					<td th:text="${c.name}"></td>
+					
+					<td th:text="${c.address}"></td>
+					
+					<td th:text="${c.phone}"></td>
+					
+					<td th:text="${c.email}"></td>
+				
+					<td th:text="${c.headOfDepartment}"></td>
+				</tr>
+			</tbody>
+		</table>
+</html>		
+		

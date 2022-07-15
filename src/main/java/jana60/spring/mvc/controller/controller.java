@@ -20,9 +20,14 @@ public class controller {
 
 	@GetMapping("/home")
 	public String countries(Model model) {
-		List<model_university> departmentsList = (List<model_university>) repo.findAll();
-		model.addAttribute("departmentsList", departmentsList);
+
 		return "home";
 	}
 
+	@GetMapping("/dipartimenti")
+	public String dipartimenti(Model model) {
+		List<model_university> departmentsList = (List<model_university>) repo.findAll();
+		model.addAttribute("departmentsList", departmentsList);
+		return "dipartimenti";
+	}
 }

@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>	
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title>Dipartimenti</title>
+		 <th:block th:replace="fragment :: head"></th:block>
 	</head>
 	<body>
-		<h1>Ecco l'elenco dei Dipartimenti presentio nel database:</h1>
-		<ul>
-			<li th:each="c : ${departmentsList}" th:text="${c.getName()}"></li>
-		</ul>
+	<header>
+	 <th:block th:replace="fragment :: navbar"></th:block>
+	</header>
+		<h1>Questa e' la homepage</h1>
 	</body>
 </html>
