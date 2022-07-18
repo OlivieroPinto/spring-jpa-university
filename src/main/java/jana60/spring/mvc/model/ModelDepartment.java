@@ -31,7 +31,7 @@ public class ModelDepartment {
 	private String headOfDepartment;
 
 	@OneToMany
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "department_id")
 	public List<ModelDegrees> corsi;
 
 	public Integer getId() {
