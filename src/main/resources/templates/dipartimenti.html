@@ -13,29 +13,11 @@
 
 
 <hr/>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Dipartimento</th>
-					<th>Indirizzo</th>
-					<th>Telefono</th>
-					<th>Email</th>
-					<th>CapoDipartimento</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="c : ${departmentsList}">
-					<td th:text="${c.name}"></td>
-					
-					<td th:text="${c.address}"></td>
-					
-					<td th:text="${c.phone}"></td>
-					
-					<td th:text="${c.email}"></td>
-				
-					<td th:text="${c.headOfDepartment}"></td>
-				</tr>
-			</tbody>
-		</table>
+		<div>
+		<li th:each="r : ${departmentsList}">
+				<a th:text="${r.name}"  th:href="@{|/dipartimenti/${r.id}|}"></a>
+			</li>
+		</div>
+			
 </html>		
 		

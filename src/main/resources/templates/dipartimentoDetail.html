@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>	
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		 <th:block th:replace="fragment :: head"></th:block>
+	</head>
+	<div><th:block th:replace="fragment :: navbar"></th:block></div>
+	
+<h1>dipartimenti</h1>
+
+
+ <div class="container">
+		    <div class="container">
+    	<h1 th:text="${dipartimentoId.name}"></h1>
+		<hr/>
+		<h2>Elenco corsi</h2>
+		<span th:text="${dipartimentoId.corsi.size()}"></span>	
+		<ul>
+		
+		
+			<li th:each="currentDipartment : ${dipartimentoId.corsi}" th:text="${currentDipartment.name}"></li>
+		</ul>
+    </div>
+		
+    </div>
+</html>		
+		
+
+
+
+
+
