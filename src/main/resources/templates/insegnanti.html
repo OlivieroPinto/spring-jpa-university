@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>	
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		 <th:block th:replace="fragment :: head"></th:block>
+	</head>
+	<div><th:block th:replace="fragment :: navbar"></th:block></div>
+	
+<h1>Ecco i dipartiemnti</h1>
+    <div th:if="${#lists.isEmpty(insegnantilist)}">
+        <h1>Spiacenti, non è disponibile una lista di dipartimenti</h1>>
+      </div>
+      <div th:unless="${#lists.isEmpty(insegnantilist)}">
+
+
+<hr/>
+
+<div th:each="r : ${insegnantilist}" class="container">
+  <div class="row">
+    <div class="col-sm">
+    	<div th:text="${r.name}"></div>      
+    </div>
+    <div class="col-sm">
+    	<div th:text="${r.surname}"></div>
+    </div>
+    <div  class="col-sm">
+    	<a class="btn btn-primary mb-2" th:href="@{|/insegnanti/${r.teachersId}|}">Info</a>
+    </div>
+  </div>
+</div>
+		
